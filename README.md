@@ -82,6 +82,16 @@ void main() async {
   
   // show in the terminal
   print(dataRead);
+  
+  // to write plain string in a file, just use writeTxt
+  
+  // write string in the txt files
+  await writeTxt(data.toString(), fileName);
+    
+  // read a string again
+  dataRead = await readTxt(fileName);
+  
+  print(dateRead);
 }
 
 ```

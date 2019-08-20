@@ -1,6 +1,6 @@
 name: scidart_io
 description: SciDart IO is file manipulation library compatible with SciDart. This library is part of SciDart project (https://github.com/scidart).
-version: 0.0.1-dev.2
+version: 0.0.1-dev.3
 homepage: https://github.com/scidart/scidart_io
 author: Ângelo Polotto <angelopolotto@gmail.com.br>
 

@@ -1,3 +1,7 @@
+## 0.0.1-dev.3
+
+- Plain string read and write functions
+
 ## 0.0.1-dev.2
 
 - SciDart dependency updated to 0.0.1-dev.5

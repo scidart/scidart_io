@@ -4,7 +4,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('txt', () {
-    test('write lines txt', () async {
+    test('write string txt', () async {
       var data = Array2d([
         Array([1, 2, 3, 4, 5]),
         Array([2, 3, 4, 5, 6]),
@@ -13,14 +13,14 @@ void main() {
         Array([5, 6, 7, 8, 9]),
       ]);
 
-      var fileName = 'data_array.txt';
+      var fileName = 'data_array_string.txt';
 
-      await writeLinesTxt(data.toString().split('\n'), fileName);
-      var dataRead = await readLinesTxt(fileName);
+      await writeTxt(data.toString(), fileName);
+      var dataRead = await readTxt(fileName);
 
       print(dataRead);
 
-      expect(dataRead, data.toString().split('\n'));
+      expect(dataRead, data.toString());
     });
   });
 }
