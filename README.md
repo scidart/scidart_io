@@ -1,110 +1,49 @@
-# SciDart IO
+# ![Scidart logo](https://github.com/scidart/scidart.org/blob/master/img/logo_small.png?raw=true)
+
 **SciDart IO** is file manipulation library compatible with **SciDart**. This library is part of [SciDart project](https://github.com/scidart).
 
-## Goals
+## 🏹 Goals
+
 A data manipulation library compatible with SciDart. The focus platform is PC for while to simplify the development.
 
-## Motivation
-Make easy save and retrieve data from SciDart.
+## 🏃 Motivation
 
-## PUB link
+Make easy to save and retrieve data from SciDart.
+
+## 🧭 PUB link
+
 Link to the Pub repository: https://pub.dev/packages/scidart_io
 
-## Installation
-You can follow instruction in the Pub web site: https://pub.dev/packages/scidart_io#-installing-tab-
+## 🔌 Installation
 
-## SciDart IO structure
-* IO: File manipulation libraries;
-  * csv: [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) file manipulation;
-  * txt: text file manipulation;
+You can follow instruction in the Pub website: https://pub.dev/packages/scidart_io#-installing-tab-
   
-## Examples
-### CSV
-```Dart
-import 'package:scidart/numdart.dart';
-import 'package:scidart_io/scidart_io.dart';
+## ⚒ Examples
 
-void main() async {
-  // read stock_data.csv file in the same directory of the current
-  // script
-  // the delimiter of this file is ',' but can be any character
-  // the reader skip one line in the header of the file and
-  // one line at the end of the file
-  var data = await readCSV('stock_data.csv', delimiter: ',', skipHeader: 1, skipFooter: 1);
-  
-  print(data); // show the data
-  
-  // generate a 2d array data for test
-  var data2 = Array2d([
-    Array([1, 2, 3, 4, 5]),
-    Array([2, 3, 4, 5, 6]),
-    Array([3, 4, 5, 6, 7]),
-    Array([4, 5, 6, 7, 8]),
-    Array([5, 6, 7, 8, 9]),
-  ]);
-  
-  // define a file name
-  var fileName = 'data_array.csv';
-  
-  // save the data in a CSV file
-  await writeLinesCSV(data2, fileName);
-  
-  // read the same data again and convert to Array2d again
-  var data2Read = await readCSV(fileName, convertToArray2d: true);
-  
-  // show the data
-  print(data2Read);
-}
-```
-### TXT
-```Dart
-import 'package:scidart/numdart.dart';
-import 'package:scidart_io/scidart_io.dart';
+The examples can be found in [the project web site](https://scidart.org/#examples-scidart).
 
-void main() async {
-  // define a data for tests
-  var data = Array2d([
-    Array([1, 2, 3, 4, 5]),
-    Array([2, 3, 4, 5, 6]),
-    Array([3, 4, 5, 6, 7]),
-    Array([4, 5, 6, 7, 8]),
-    Array([5, 6, 7, 8, 9]),
-  ]);
-  
-  // define a file name
-  var fileName = 'data_array.txt';
-  
-  // write lines in the txt files
-  await writeLinesTxt(data.toString().split('\n'), fileName);
-  
-  // read the line again
-  var dataRead = await readLinesTxt(fileName);
-  
-  // show in the terminal
-  print(dataRead);
-  
-  // to write plain string in a file, just use writeTxt
-  
-  // write string in the txt files
-  await writeTxt(data.toString(), fileName);
-    
-  // read a string again
-  dataRead = await readTxt(fileName);
-  
-  print(dateRead);
-}
+## 📂 Supported formats
 
-```
+- csv: [CSV](https://en.wikipedia.org/wiki/Comma-separated_values) file manipulation;
+- txt: text file manipulation;
 
-## Todo list
-### Benchmarks
-- [ ] made benchmark on Linux
-- [ ] made benchmark on MacOS
-- [ ] made benchmark on MS Windows
+## 🛣 Project milestones
 
-### Code implementations
-- [x] write, read txt (work only in PC)
-- [x] write, read csv (work only in PC)
-- [ ] write, read json (work only in PC)
-- [ ] write, read mongo (work only in PC)
-- [ ] write, read sql like databases (work only in PC)
+All the project status will be shared and updated in the __Projects__ section of Github.
+
+## 🙌 How to contribute
+
+I recommend check the __Projects__ section and choose a task or choose and solve a problem with **SciDart** and 
+implement the missing parts and read the file CONTRIBUTING.md.
+
+The reference values for all functions came from with SciPy. The contributions need use SciPy as reference too.
+
+Every contribution need to have tests, documentation and examples, otherwise, the pull request will be blocked.
+
+## ☕ Supporters
+
+Scidart is an open source project that runs on donations to pay the bills e.g. our domain name. If you want to support Scidart, you can ☕ [**buy a coffee here**](https://www.buymeacoffee.com/polotto).
+
+## ⚠ License
+
+Copyright (c) 2019-present [Angelo Polotto](https://github.com/polotto) and Contributors. Scidart is free and open-source software licensed under the [Apache-2.0 License](./LICENSE). The official logo was created by [Juliano Polotto](https://www.linkedin.com/in/juliano-polotto-550ba379/) and distributed under Creative Commons license (CC BY-SA 4.0 International).
