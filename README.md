@@ -1,6 +1,6 @@
 # ![Scidart logo](https://github.com/scidart/scidart.org/blob/master/img/logo_small.png?raw=true)
 
-**SciDart IO** is file manipulation library compatible with **SciDart**. This library is part of [SciDart project](https://github.com/scidart).
+**SciDart IO** is file manipulation library compatible with **SciDart**. This library is part of [SciDart project](https://scidart.org/).
 
 ## 🏹 Goals
 
