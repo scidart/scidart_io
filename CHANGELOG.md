@@ -1,14 +1,6 @@
-## 0.0.1-dev.6
-
-- license updated
-
-## 0.0.1-dev.5
-
-- Plain string read and write functions
-
 ## 0.0.1-dev.4
 
-- Plain string read and write functions
+- license updated
 
 ## 0.0.1-dev.3
 
