@@ -27,23 +27,21 @@ import 'package:scidart_io/src/io/txt/read_lines_txt.dart';
 ///  --------
 ///  >>> var data = await readCSV('stock_data.csv', delimiter: ',', skipHeader: 1, skipFooter: 1);
 Future<dynamic> readCSV(String fileName,
-    {String baseDir,
-    String delimiter = ";",
+    {String delimiter = ';',
     int skipHeader = 0,
     int skipFooter = 0,
     bool convertToArray2d = false,
     Encoding encoding = utf8}) async {
-  final lines =
-      await readLinesTxt(fileName, baseDir: baseDir, encoding: encoding);
-  List<List> data = List();
+  final lines = await readLinesTxt(fileName, encoding: encoding);
+  var data = <List>[];
 
   for (var l = skipHeader; l < lines.length - skipFooter; l++) {
     // Process results.
     List rows = lines[l].split(delimiter); // split by delimiter
-    List rows2 = List();
+    var rows2 = [];
     for (var row in rows) {
       var aux = num.tryParse(row);
-      rows2.add(aux != null ? aux : row);
+      rows2.add(aux ?? row);
     }
     data.add(rows2);
   }

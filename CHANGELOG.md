@@ -1,3 +1,10 @@
+## 0.0.2-dev.1
+
+- null safety
+- multiplatform support
+- future return
+- tests updates
+
 ## 0.0.1-dev.6
 
 - README update
