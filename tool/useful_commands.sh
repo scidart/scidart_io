@@ -9,7 +9,10 @@
 # open docs with http server
 # dhttpd --path doc/api
 
-# validate but do not publish the package.
-# pub publish  --dry-run
-# publish package
-# pub publish
+# update packages
+pub outdated --no-dev-dependencies --up-to-date --no-dependency-overrides
+
+# sequence useful
+dartfmt -w lib test example
+dartanalyzer lib test example
+pub publish --dry-run

@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:scidart/src/numdart/numdart.dart';
 import 'package:scidart_io/src/io/path/retrieve_file_path.dart';
+import 'package:universal_io/io.dart';
 
 ///  Write a list of line in a TXT file
 ///  [data] : a list where each line is a string that will be written in the file
@@ -27,13 +27,11 @@ import 'package:scidart_io/src/io/path/retrieve_file_path.dart';
 ///  >>>   Array([5, 6, 7, 8, 9]),
 ///  >>> ]);
 ///  >>> await writeLinesCSV(data, fileName);
-void writeLinesCSV(Array2d data, String fileName,
-    {String baseDir,
-    String delimiter = ";",
+Future<void> writeLinesCSV(Array2d data, String fileName,
+    {String delimiter = ';',
     Encoding encoding = utf8,
     FileMode mode = FileMode.write}) async {
-  var file =
-      await File(retrieveFilePath(fileName, baseDir)).create(recursive: true);
+  var file = await File(retrieveFilePath(fileName)).create(recursive: true);
   var sink = file.openWrite(encoding: encoding, mode: mode);
 
   for (var d in data) {

@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:scidart_io/src/io/path/retrieve_file_path.dart';
+import 'package:universal_io/io.dart';
 
 ///  Read a TXT file and return a List where each element is line of the file
 ///  [fileName] : file name or path of the file
@@ -10,8 +10,6 @@ import 'package:scidart_io/src/io/path/retrieve_file_path.dart';
 ///  Examples
 ///  --------
 ///  >>> var data = await readLinesTxt('stock_data.txt');
-Future<List> readLinesTxt(String fileName,
-    {String baseDir, Encoding encoding = utf8}) async {
-  return await File(retrieveFilePath(fileName, baseDir))
-      .readAsLines(encoding: encoding);
+Future<List> readLinesTxt(String fileName, {Encoding encoding = utf8}) async {
+  return await File(retrieveFilePath(fileName)).readAsLines(encoding: encoding);
 }
